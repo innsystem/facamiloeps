@@ -6,6 +6,8 @@ admin/config.php
 
 download/
 
+install/
+
 image/catalog/*
 image/data/
 image/cache/
