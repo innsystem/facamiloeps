@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site em Construção</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #004c99 url(./admin/view/image/pattern/bg_admin.png);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .progress {
+            width: 0;
+            height: 100%;
+            background: #00c3ff;
+            transition: width 2s ease-in-out;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #00c3ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./image/catalog/logo/identidade visual_branco_full.png" alt="InnSystem" style="max-width:220px; margin:0 auto 40px; display:block;">
+        <h1>Site em Construção</h1>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="footer">
+            Desenvolvido por: <a href="https://innsystem.com.br" target="_blank">InnSystem Inovação em Sistemas</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                document.querySelector(".progress").style.width = "50%";
+            }, 500);
+        });
+    </script>
+</body>
+</html>

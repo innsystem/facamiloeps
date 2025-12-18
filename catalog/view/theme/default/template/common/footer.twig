@@ -1,0 +1,157 @@
+</main>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="logo">
+					<img src="{{ logo }}" alt="{{ site_name }}" class="img-responsive">
+				</div>
+				<p>{{site_description}}</p>
+			</div>
+			<div class="col-sm-3">
+				<h5>{{ text_insticuional }}</h5>
+				<ul class="list-unstyled">
+					{% for information in informations %}
+						<li>
+							<a href="{{ information.href }}">{{ information.title }}</a>
+						</li>
+					{% endfor %}
+					<li>
+						<a href="{{ contact }}">{{ text_contact }}</a>
+					</li>
+					<li>
+						<a href="{{ sitemap }}">{{ text_sitemap }}</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<h5>{{ text_account }}</h5>
+				<ul class="list-unstyled">
+					<li>
+						<a href="{{ account }}">{{ text_account }}</a>
+					</li>
+					<li>
+						<a href="{{ order }}">{{ text_order }}</a>
+					</li>
+					<li>
+						<a href="{{ return }}">{{ text_return }}</a>
+					</li>
+					<li>
+						<a href="{{ wishlist }}">{{ text_wishlist }}</a>
+					</li>
+					<li>
+						<a href="{{ newsletter }}">{{ text_newsletter }}</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-sm-3">
+				<h5>{{ text_contact }}</h5>
+				<ul class="list-unstyled list-contact">
+					<li>
+						<i class="fa fa-whatsapp"></i>
+						<span>WhatsApp: {{ telephone }}</span>
+					</li>
+					<li>
+						<i class="fa fa-envelope"></i>
+						<span>{{ email }}</span>
+					</li>
+					<li>
+						<i class="fa fa-clock-o"></i>
+						<span>{{ hour_open}}</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-md-4 col-sm-12 text-center payment-icons">
+				<img src="./image/catalog/icones/visa.webp" alt="Visa">
+				<img src="./image/catalog/icones/master.webp" alt="Mastercard">
+				<img src="./image/catalog/icones/amex.webp" alt="American Express">
+				<img src="./image/catalog/icones/elo.webp" alt="Elo">
+				<img src="./image/catalog/icones/ame.webp" alt="Ame">
+				<img src="./image/catalog/icones/boleto.webp" alt="Boleto">
+			</div>
+
+			<!-- Ícones das Redes Sociais -->
+			<div class="col-md-4 col-sm-12 text-center social-icons">
+				{% if facebook %}
+				<a href="{{ facebook }}" target="_blank">
+					<i class="fa fa-facebook"></i>
+				</a>
+				{% endif %}
+				{% if instagram %}
+				<a href="{{ instagram }}" target="_blank">
+					<i class="fa fa-instagram"></i>
+				</a>
+				{% endif %}
+				{% if youtube %}
+				<a href="{{ youtube }}" target="_blank">
+					<i class="fa fa-youtube"></i>
+				</a>
+				{% endif %}
+			</div>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-sm-10">
+				<p>{{ powered }}
+					<br>
+					{{ address }}</p>
+			</div>
+			<div class="col-sm-2">
+				<a href="https://innsystem.com.br" target="_blank" class="text-right">
+					<img src="./admin/view/image/logo.png" alt="InnSystem Inovação em Sistemas" class="img-responsive" style="max-width:120px;">
+				</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<div class="whatsapp_futuante pulsaDelay animate__animated animate__tada">
+	<a href="https://wa.me/55{{ telephone|replace({'(': "", ")" : "", " ": "", "-": "", "." : ""}) }}" target="_Blank"><i class="fa fa-whatsapp"></i></a>
+</div>
+
+{% for style in styles %}
+	<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}"/>
+{% endfor %}
+{% for script in scripts %}
+	<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+{# Cart Dropdown Lateral #}
+<script>
+	$(document).on('click', '.button-cart-open', function (e) {
+e.preventDefault();
+$('#cart').toggleClass('open');
+});
+</script>
+{# Mega Menu Scripts #}
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+var categories = document.querySelectorAll(".mega-menu-category");
+var submenus = document.querySelectorAll(".mega-menu-sub");
+
+categories.forEach(function (category) {
+category.addEventListener("mouseenter", function () {
+var targetId = this.getAttribute("data-target");
+
+// Esconde todos os submenus
+submenus.forEach(function (submenu) {
+submenu.style.display = "none";
+});
+
+// Exibe o submenu correspondente
+var targetSubmenu = document.getElementById(targetId);
+if (targetSubmenu) {
+targetSubmenu.style.display = "block";
+}
+});
+});
+});
+
+</script>
+</body></html>
